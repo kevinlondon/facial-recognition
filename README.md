@@ -63,7 +63,7 @@ because it includes pre-built Python wheels,
 allowing us to skip installing OpenCV from scratch and instead relying upon
 pre-built binaries.
 
-We use pybind11 to compile the helper `kernelco.cpp` file, which we use to
+We use pybind11 to compile the helper `pybind_example.cpp` file, which we use to
 calculate a set of rolling window statistics on the frames-per-second rendered
 / processed by the app.
 
