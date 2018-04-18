@@ -1,0 +1,43 @@
+<DetectLayout>:
+    orientation: 'vertical'
+
+    KivyCamera:
+        id: camera
+        resolution: (640, 480)
+        detect: False
+        green_mode: False
+        show_fps: False
+        fps: '0'
+
+    Label:
+        id: fps
+        font_size: 20 if self.show else 0
+        text: 'FPS: ' + camera.fps
+        size_hint_y: None
+        height: '45dp'
+        show: False
+
+    ToggleButton:
+        text: 'Detect Faces'
+        on_press: camera.detect = not camera.detect
+        size_hint_y: None
+        height: '48dp'
+
+    ToggleButton:
+        text: 'View Green Channel Only'
+        on_press: camera.green_mode = not camera.green_mode
+        size_hint_y: None
+        height: '48dp'
+
+    ToggleButton:
+        text: 'Show FPS'
+        on_press: fps.show = not fps.show
+        size_hint_y: None
+        height: '48dp'
+        show: False
+
+    Button:
+        text: 'Capture'
+        size_hint_y: None
+        height: '48dp'
+        on_press: root.capture()
